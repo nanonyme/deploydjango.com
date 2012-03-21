@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Deploy Django</title><link href="/" rel="alternate"></link><link href="//feeds/postgresql.atom.xml" rel="self"></link><id>/</id><updated>2012-03-19T00:00:00-07:00</updated><entry><title>PostgreSQL Settings</title><link href="//postgresql-settings.html" rel="alternate"></link><updated>2012-03-19T00:00:00-07:00</updated><author><name>Randall Degges</name></author><id>//postgresql-settings.html</id><summary type="html">&lt;p&gt;Oh yeah.&lt;/p&gt;</summary></entry></feed>

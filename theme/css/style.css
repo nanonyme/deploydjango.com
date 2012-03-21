@@ -21,14 +21,31 @@ h4 a { color : inherit !important }
 h5 a { color : inherit !important }
 h6 a { color : inherit !important }
 
-ul { list-style-type: none }
+ul { display: inline; list-style-type: none }
+li { margin-left: 10px }
 
-#banner {
+#wrapper {
+  margin: 0px auto;
+  width: 960px;
+}
+
+header {
   font-family: 'Cambo', serif;
   text-align: center;
 }
 
-#content { float: right; }
+nav {
+  float: left;
+  margin: 30px 20px 30px 0px;
+  width: 178px;
+}
+
+#content {
+  height: 200px;
+  margin: 30px 0px 30px 0px;
+  width: 762px;
+  float: right;
+}
 
 pre {
   margin : 2em 1em 2em 4em ;
@@ -41,4 +58,8 @@ pre {
 
 footer {
   text-align: center;
+}
+
+.clear {
+  clear: both;
 }

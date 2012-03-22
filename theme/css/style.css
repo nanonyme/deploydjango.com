@@ -29,6 +29,16 @@ li { margin-left: 10px }
   width: 960px;
 }
 
+#page {
+  border: 0px solid gray;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px #777;
+  box-shadow:         3px 3px 5px 6px #ccc;
+  margin: 0px;
+  overflow: hidden;
+  padding: 10px;
+}
+
 header {
   font-family: 'Cambo', serif;
   text-align: center;
@@ -36,12 +46,11 @@ header {
 
 nav {
   float: left;
-  margin: 30px 20px 30px 0px;
+  /*margin: 30px 20px 30px 0px;*/
   width: 178px;
 }
 
 #content {
-  height: 200px;
   margin: 30px 0px 30px 0px;
   width: 762px;
   float: right;

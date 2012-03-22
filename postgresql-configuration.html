@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <meta charset="utf-8" />
+      <title>Deploy Django</title>
+      <link rel="stylesheet" type="text/css" href="./theme/css/style.css" />
+      <link href='http://fonts.googleapis.com/css?family=Cambo' rel='stylesheet' type='text/css'>
+    
+  </head>
+  <body id="index" class="home">
+    <div id="wrapper">
+      <header id="banner" class="body">
+        <h1><a href=".">Deploy Django</a></h1>
+        <h2>Useful patterns for deploying Django on Heroku.</h2>
+      </header>
+
+      <nav>
+        
+          <h3>memcached</h3>
+          <ul>
+            
+              <li><a href="./memcached.html" title="Memcached" rel="bookmark">Memcached</a></li>
+            
+          </ul>
+        
+          <h3>postgresql</h3>
+          <ul>
+            
+              <li><a href="./postgresql-configuration.html" title="PostgreSQL Configuration" rel="bookmark">PostgreSQL Configuration</a></li>
+            
+          </ul>
+        
+      </nav>
+
+      <section>
+<section id="content" class="body">
+        <header> <h2 class="entry-title"><a href="" rel="bookmark" title="Permalink to PostgreSQL Configuration">PostgreSQL Configuration</a></h2> </header>
+        <footer class="post-info">
+                <abbr class="published" title="2012-03-21T21:22:42.834911">
+                        Wed 21 March 2012
+                </abbr>
+                
+                <address class="vcard author">
+                        By <a class="url fn" href="#">Randall Degges</a>
+                </address>
+                
+        </footer><!-- /.post-info -->
+        <div class="entry-content">
+        <p>One of Heroku's oldest and most popular addons is their <a class="reference external" href="http://devcenter.heroku.com/categories/heroku-postgres">PostgreSQL Addon</a>. Did you know that
+Heroku's hosted PostgreSQL service is &quot;the largest and most reliable Postgres
+service in the world&quot; (<a class="reference external" href="https://postgres.heroku.com/">ref</a>).</p>
+<div class="section" id="pypi-dependencies">
+<h2>PyPI Dependencies</h2>
+<p>Before we can get Django working with Heroku's PostgreSQL service, we need to
+install the <a class="reference external" href="http://initd.org/psycopg/">psycopg2</a> PyPI module. The first
+thing you'll want to do is install <tt class="docutils literal">psycopg2</tt> locally into your project's
+virtualenv:</p>
+<div class="highlight"><pre><span class="gp">$</span> workon myproject
+<span class="go">(myproject) $ pip install -U psycopg2</span>
+<span class="go">Downloading/unpacking psycopg2</span>
+<span class="go">  Running setup.py egg_info for package psycopg2</span>
+<span class="go">    no previously-included directories found matching &#39;doc/src/_build&#39;</span>
+<span class="go">Installing collected packages: psycopg2</span>
+<span class="go">  Running setup.py install for psycopg2</span>
+
+<span class="go">    no previously-included directories found matching &#39;doc/src/_build&#39;</span>
+<span class="go">Successfully installed psycopg2</span>
+<span class="go">Cleaning up...</span>
+<span class="go">(myproject) $</span>
+</pre></div>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you're running Ubuntu, you'll need to install the <tt class="docutils literal"><span class="pre">libpq-dev</span></tt> package.</p>
+</div>
+<p>Once you've got <tt class="docutils literal">psycopg2</tt> installed in your virtualenv, you'll want to run
+<tt class="docutils literal">pip freeze</tt> to confirm it's installed and working as expected:</p>
+<div class="highlight"><pre><span class="go">(myproject) $ pip freeze</span>
+<span class="go">psycopg2==2.4.4</span>
+<span class="go">wsgiref==0.1.2</span>
+<span class="go">(myproject) $</span>
+</pre></div>
+<p>Assuming you see something like <tt class="docutils literal"><span class="pre">psycopg2==2.4.4</span></tt>, you'll then want to add
+that line to your project's <tt class="docutils literal">requirements.txt</tt> file:</p>
+<div class="highlight"><pre><span class="go">(myproject) $ echo &quot;psycopg2==2.4.4&quot; &gt;&gt; requirements.txt</span>
+<span class="go">(myproject) $</span>
+</pre></div>
+</div>
+
+        </div><!-- /.entry-content -->
+</section>
+</section>
+
+      <footer class="clear">
+        <span>Curated by <a href="https://twitter.com/#!/rdegges" title="rdegges">@rdegges</a> and <a href="https://twitter.com/#!/craigkerstiens" title="craigkerstiens">@craigkerstiens</a>.</span>
+        <br/>
+        <span>We strongly endorse <a href="http://www.heroku.com/" title="heroku">Heroku</a>, <a href="https://www.djangoproject.com/" title="django">Django</a>, and <a href="http://docs.notmyidea.org/alexis/pelican/" title="pelican">pelican</a>.</span>
+      </footer>
+    </div>
+  </body>
+</html>

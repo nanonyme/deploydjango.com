@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Deploy Django</title><link href="/" rel="alternate"></link><link href="//feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2012-03-19T00:00:00-07:00</updated><entry><title>Memcached</title><link href="//memcached.html" rel="alternate"></link><updated>2012-03-19T00:00:00-07:00</updated><author><name>Randall Degges</name></author><id>//memcached.html</id><summary type="html">&lt;p&gt;I like memcached.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Deploy Django</title><link href="/" rel="alternate"></link><link href="//feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2012-03-21T21:22:42-07:00</updated><entry><title>PostgreSQL Configuration</title><link href="//postgresql-configuration.html" rel="alternate"></link><updated>2012-03-21T21:22:42-07:00</updated><author><name>Randall Degges</name></author><id>//postgresql-configuration.html</id><summary type="html">&lt;p&gt;One of Heroku's oldest and most popular addons is their &lt;a class="reference external" href="http://devcenter.heroku.com/categories/heroku-postgres"&gt;PostgreSQL Addon&lt;/a&gt;. Did you know that
+Heroku's hosted PostgreSQL service is &amp;quot;the largest and most reliable Postgres
+service in the world&amp;quot; (&lt;a class="reference external" href="https://postgres.heroku.com/"&gt;ref&lt;/a&gt;).&lt;/p&gt;
+&lt;div class="section" id="pypi-dependencies"&gt;
+&lt;h2&gt;PyPI Dependencies&lt;/h2&gt;
+&lt;p&gt;Before we can get Django working with Heroku's PostgreSQL service, we need to
+install the &lt;a class="reference external" href="http://initd.org/psycopg/"&gt;psycopg2&lt;/a&gt; PyPI module. The first
+thing you'll want to do is install &lt;tt class="docutils literal"&gt;psycopg2&lt;/tt&gt; locally into your project's
+virtualenv:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="gp"&gt;$&lt;/span&gt; workon myproject
+&lt;span class="go"&gt;(myproject) $ pip install -U psycopg2&lt;/span&gt;
+&lt;span class="go"&gt;Downloading/unpacking psycopg2&lt;/span&gt;
+&lt;span class="go"&gt;  Running setup.py egg_info for package psycopg2&lt;/span&gt;
+&lt;span class="go"&gt;    no previously-included directories found matching &amp;#39;doc/src/_build&amp;#39;&lt;/span&gt;
+&lt;span class="go"&gt;Installing collected packages: psycopg2&lt;/span&gt;
+&lt;span class="go"&gt;  Running setup.py install for psycopg2&lt;/span&gt;
+
+&lt;span class="go"&gt;    no previously-included directories found matching &amp;#39;doc/src/_build&amp;#39;&lt;/span&gt;
+&lt;span class="go"&gt;Successfully installed psycopg2&lt;/span&gt;
+&lt;span class="go"&gt;Cleaning up...&lt;/span&gt;
+&lt;span class="go"&gt;(myproject) $&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
+&lt;p class="last"&gt;If you're running Ubuntu, you'll need to install the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;libpq-dev&lt;/span&gt;&lt;/tt&gt; package.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Once you've got &lt;tt class="docutils literal"&gt;psycopg2&lt;/tt&gt; installed in your virtualenv, you'll want to run
+&lt;tt class="docutils literal"&gt;pip freeze&lt;/tt&gt; to confirm it's installed and working as expected:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="go"&gt;(myproject) $ pip freeze&lt;/span&gt;
+&lt;span class="go"&gt;psycopg2==2.4.4&lt;/span&gt;
+&lt;span class="go"&gt;wsgiref==0.1.2&lt;/span&gt;
+&lt;span class="go"&gt;(myproject) $&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Assuming you see something like &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;psycopg2==2.4.4&lt;/span&gt;&lt;/tt&gt;, you'll then want to add
+that line to your project's &lt;tt class="docutils literal"&gt;requirements.txt&lt;/tt&gt; file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="go"&gt;(myproject) $ echo &amp;quot;psycopg2==2.4.4&amp;quot; &amp;gt;&amp;gt; requirements.txt&lt;/span&gt;
+&lt;span class="go"&gt;(myproject) $&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="postgresql"></category><category term="heroku"></category><category term="django"></category><category term="python"></category><category term="configuration"></category></entry><entry><title>Memcached</title><link href="//memcached.html" rel="alternate"></link><updated>2012-03-19T00:00:00-07:00</updated><author><name>Randall Degges</name></author><id>//memcached.html</id><summary type="html">&lt;p&gt;I like memcached.&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;exit&lt;/span&gt;
 &lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;1&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;ohnoes&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>PostgreSQL Settings</title><link href="//postgresql-settings.html" rel="alternate"></link><updated>2012-03-19T00:00:00-07:00</updated><author><name>Randall Degges</name></author><id>//postgresql-settings.html</id><summary type="html">&lt;p&gt;Oh yeah.&lt;/p&gt;</summary></entry></feed>
+&lt;/pre&gt;&lt;/div&gt;</summary></entry></feed>

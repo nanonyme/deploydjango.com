@@ -1,6 +1,7 @@
 body {
-  font-family : monospace ;
-  font-size : 100% ;
+  font-family: 'Droid Sans', sans-serif;
+  /*font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;*/
+  font-size: .9em;
   background-color : white ;
   color : #111 ;
   min-width : 400px ;
@@ -35,8 +36,9 @@ li { margin-left: 10px }
   box-shadow: 0px 0px 5px #777;
   box-shadow:         3px 3px 5px 6px #ccc;
   margin: 0px;
+  margin-bottom: 20px;
   overflow: hidden;
-  padding: 10px;
+  padding: 0px 20px;
 }
 
 header {
@@ -46,29 +48,21 @@ header {
 
 nav {
   float: left;
-  /*margin: 30px 20px 30px 0px;*/
   width: 178px;
+  padding-right: 20px;
 }
 
 #content {
-  margin: 30px 0px 30px 0px;
-  width: 762px;
+  padding-left: 20px;
+  width: 702;
   float: right;
 }
 
 pre {
+  font-family: monospace;
   margin : 2em 1em 2em 4em ;
-}
-
-#post-list {
-  margin-bottom : 1em ;
-  margin-top : 1em ;
 }
 
 footer {
   text-align: center;
-}
-
-.clear {
-  clear: both;
 }
